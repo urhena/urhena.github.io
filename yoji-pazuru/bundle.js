@@ -282,7 +282,7 @@ function Footer() {
     className: "cfooter",
     children: /*#__PURE__*/(0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)("small", {
       children: [year, " ", /*#__PURE__*/(0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)("a", {
-        href: "https://github.com/urhena",
+        href: "https://github.com/urhena/yoji-pazuru/",
         children: "urhena"
       }, void 0, false, {
         fileName: _jsxFileName,
@@ -422,7 +422,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _QuestionAnswer__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./QuestionAnswer */ "./src/QuestionAnswer.js");
 /* harmony import */ var _SkipButton__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./SkipButton */ "./src/SkipButton.js");
-/* harmony import */ var react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-dev-runtime */ "./node_modules/react/jsx-dev-runtime.js");
+/* harmony import */ var _Message__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Message */ "./src/Message.js");
+/* harmony import */ var react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-dev-runtime */ "./node_modules/react/jsx-dev-runtime.js");
 /* provided dependency */ var __react_refresh_utils__ = __webpack_require__(/*! ./node_modules/@pmmmwh/react-refresh-webpack-plugin/lib/runtime/RefreshUtils.js */ "./node_modules/@pmmmwh/react-refresh-webpack-plugin/lib/runtime/RefreshUtils.js");
 __webpack_require__.$Refresh$.runtime = __webpack_require__(/*! ./node_modules/react-refresh/runtime.js */ "./node_modules/react-refresh/runtime.js");
 
@@ -432,8 +433,13 @@ var _jsxFileName = "/home/user/github/yoji-pazuru/src/Main.js",
 
 
 
+
 function Main(props) {
   _s();
+  const [firstLoad, setFirstLoad] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(true);
+  function handleLoadChange() {
+    setFirstLoad(false);
+  }
   const [data, setData] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)({
     count: 0,
     jukugo: "四字熟語",
@@ -449,32 +455,152 @@ function Main(props) {
     });
   }
   ;
-  return /*#__PURE__*/(0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxDEV)("main", {
-    className: "cmain",
-    children: [/*#__PURE__*/(0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxDEV)(_QuestionAnswer__WEBPACK_IMPORTED_MODULE_1__["default"], {
+  return /*#__PURE__*/(0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxDEV)("main", {
+    className: firstLoad ? "cmain dimmed" : "cmain",
+    children: [firstLoad ? /*#__PURE__*/(0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxDEV)(_Message__WEBPACK_IMPORTED_MODULE_3__["default"], {
+      closeMessage: handleLoadChange
+    }, void 0, false, {
+      fileName: _jsxFileName,
+      lineNumber: 32,
+      columnNumber: 26
+    }, this) : "", /*#__PURE__*/(0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxDEV)(_QuestionAnswer__WEBPACK_IMPORTED_MODULE_1__["default"], {
       qa: [data.jukugo, data.randomizedJukugo],
       record: data.count
     }, void 0, false, {
       fileName: _jsxFileName,
-      lineNumber: 25,
+      lineNumber: 33,
       columnNumber: 13
-    }, this), /*#__PURE__*/(0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxDEV)(_SkipButton__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    }, this), /*#__PURE__*/(0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxDEV)(_SkipButton__WEBPACK_IMPORTED_MODULE_2__["default"], {
       handleClick: updateData
     }, void 0, false, {
       fileName: _jsxFileName,
-      lineNumber: 26,
+      lineNumber: 34,
       columnNumber: 13
     }, this)]
   }, void 0, true, {
     fileName: _jsxFileName,
-    lineNumber: 24,
+    lineNumber: 31,
     columnNumber: 9
   }, this);
 }
-_s(Main, "Es+RrjYHZg1YxRRG7cXtzynniq0=");
+_s(Main, "Jqd63TuGyw67SIgPqHADjGQ2sew=");
 _c = Main;
 var _c;
 __webpack_require__.$Refresh$.register(_c, "Main");
+
+const $ReactRefreshModuleId$ = __webpack_require__.$Refresh$.moduleId;
+const $ReactRefreshCurrentExports$ = __react_refresh_utils__.getModuleExports(
+	$ReactRefreshModuleId$
+);
+
+function $ReactRefreshModuleRuntime$(exports) {
+	if (true) {
+		let errorOverlay;
+		if (true) {
+			errorOverlay = false;
+		}
+		let testMode;
+		if (typeof __react_refresh_test__ !== 'undefined') {
+			testMode = __react_refresh_test__;
+		}
+		return __react_refresh_utils__.executeRuntime(
+			exports,
+			$ReactRefreshModuleId$,
+			module.hot,
+			errorOverlay,
+			testMode
+		);
+	}
+}
+
+if (typeof Promise !== 'undefined' && $ReactRefreshCurrentExports$ instanceof Promise) {
+	$ReactRefreshCurrentExports$.then($ReactRefreshModuleRuntime$);
+} else {
+	$ReactRefreshModuleRuntime$($ReactRefreshCurrentExports$);
+}
+
+/***/ }),
+
+/***/ "./src/Message.js":
+/*!************************!*\
+  !*** ./src/Message.js ***!
+  \************************/
+/***/ ((module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ Message)
+/* harmony export */ });
+/* harmony import */ var react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react/jsx-dev-runtime */ "./node_modules/react/jsx-dev-runtime.js");
+/* provided dependency */ var __react_refresh_utils__ = __webpack_require__(/*! ./node_modules/@pmmmwh/react-refresh-webpack-plugin/lib/runtime/RefreshUtils.js */ "./node_modules/@pmmmwh/react-refresh-webpack-plugin/lib/runtime/RefreshUtils.js");
+__webpack_require__.$Refresh$.runtime = __webpack_require__(/*! ./node_modules/react-refresh/runtime.js */ "./node_modules/react-refresh/runtime.js");
+
+var _jsxFileName = "/home/user/github/yoji-pazuru/src/Message.js";
+
+function Message(props) {
+  return /*#__PURE__*/(0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)("div", {
+    className: "message-container",
+    children: [/*#__PURE__*/(0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)("div", {
+      className: "message",
+      children: [/*#__PURE__*/(0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)("p", {
+        children: "\u3010\u3053\u306E\u30B5\u30A4\u30C8\u306B\u3064\u3044\u3066\u3011"
+      }, void 0, false, {
+        fileName: _jsxFileName,
+        lineNumber: 5,
+        columnNumber: 17
+      }, this), /*#__PURE__*/(0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)("p", {
+        children: "React\u3092\u7528\u3044\u305F\u56DB\u5B57\u719F\u8A9E\u30D1\u30BA\u30EB\u3067\u3059\u3002\u30BD\u30FC\u30B9\u30B3\u30FC\u30C9\u306F\u4E0B\u7DDA\u3092\u5F15\u3044\u305F\u300Curhena\u300D\u306E\u4E0B\u90E8\u306E\u30EA\u30F3\u30AF\u304B\u3089\u78BA\u8A8D\u3067\u304D\u307E\u3059\u3002\u56DB\u5B57\u719F\u8A9E\u306E\u30C7\u30FC\u30BF\u306F\u30AA\u30F3\u30E9\u30A4\u30F3\u82F1\u548C\u8F9E\u5178\u306EJMDict\uFF083/17\u65E5\u4ED8\u7248\uFF09\u3088\u308APython\u306E\u30B9\u30AF\u30EA\u30D7\u30C8\u3067\u53D6\u5F97\u3057\u305F\u3082\u306E\u3067\u30011811\u8A9E\u304C\u3042\u308A\u307E\u3059\u3002"
+      }, void 0, false, {
+        fileName: _jsxFileName,
+        lineNumber: 6,
+        columnNumber: 17
+      }, this), /*#__PURE__*/(0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)("br", {}, void 0, false, {
+        fileName: _jsxFileName,
+        lineNumber: 7,
+        columnNumber: 17
+      }, this), /*#__PURE__*/(0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)("p", {
+        children: "\u3010\u30D1\u30BA\u30EB\u306E\u89E3\u304D\u65B9\u3011"
+      }, void 0, false, {
+        fileName: _jsxFileName,
+        lineNumber: 8,
+        columnNumber: 17
+      }, this), /*#__PURE__*/(0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)("p", {
+        children: "\u30E9\u30F3\u30C0\u30E0\u306B\u8868\u793A\u3055\u308C\u308B\u554F\u984C\u5217\u306E\u5B57\u3092\u30AF\u30EA\u30C3\u30AF\u3059\u308B\u3053\u3068\u3067\u305D\u308C\u3089\u304C\u9806\u756A\u306B\u56DE\u7B54\u5217\u306E\u67A0\u306B\u5165\u308A\u307E\u3059\u3002\u305D\u306E\u56DB\u3064\u306E\u67A0\u306B\u5B57\u304C\u5165\u3063\u305F\u77AC\u9593\u3001\u305D\u308C\u305E\u308C\u7DD1\u8272\uFF08\u6B63\u89E3\uFF09\u304B\u8D64\u8272\uFF08\u4E0D\u6B63\u89E3\uFF09\u304C\u3064\u304D\u307E\u3059\u3002\u6B21\u306E\u30D1\u30BA\u30EB\u306B\u9032\u3080\u306B\u306F\u53F3\u5074\uFF08\u6A2A\u5411\u304D\u8868\u793A\u306E\u5834\u5408\uFF09\u304B\u4E0B\u5074\uFF08\u7E26\u5411\u304D\u8868\u793A\u306E\u5834\u5408\uFF09\u306B\u3042\u308B\u7070\u8272\u306E\u30DC\u30BF\u30F3\u3092\u30AF\u30EA\u30C3\u30AF\u3057\u307E\u3059\u3002"
+      }, void 0, false, {
+        fileName: _jsxFileName,
+        lineNumber: 9,
+        columnNumber: 17
+      }, this)]
+    }, void 0, true, {
+      fileName: _jsxFileName,
+      lineNumber: 4,
+      columnNumber: 13
+    }, this), /*#__PURE__*/(0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)("div", {
+      className: "button-container",
+      children: /*#__PURE__*/(0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)("button", {
+        className: "x-button",
+        onClick: props.closeMessage,
+        children: "\u9589\u3058\u308B"
+      }, void 0, false, {
+        fileName: _jsxFileName,
+        lineNumber: 12,
+        columnNumber: 13
+      }, this)
+    }, void 0, false, {
+      fileName: _jsxFileName,
+      lineNumber: 11,
+      columnNumber: 13
+    }, this)]
+  }, void 0, true, {
+    fileName: _jsxFileName,
+    lineNumber: 3,
+    columnNumber: 9
+  }, this);
+}
+_c = Message;
+var _c;
+__webpack_require__.$Refresh$.register(_c, "Message");
 
 const $ReactRefreshModuleId$ = __webpack_require__.$Refresh$.moduleId;
 const $ReactRefreshCurrentExports$ = __react_refresh_utils__.getModuleExports(
@@ -40432,7 +40558,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "body {\n    margin: 0;\n}\n.cheader, .cfooter {\n    display: flex;\n    background-color: black;\n    color: white;\n    justify-content: center;\n    align-items: center;\n    font-size: 3vh;\n}\n.cheader {\n    height: 15vh;\n    text-indent: 3vw;\n    letter-spacing: 3vw;\n}\n.cfooter {\n    height: 5vh;\n}\n.cheader > *, .cfooter > * {\n    margin: 0;\n}\n.cfooter a {\n    color: white;\n}\n.cmain {\n    display: flex;\n    justify-content: space-around;\n    align-items: center;\n}\n.question-answer {\n    display: flex;\n    justify-content: space-between;\n    align-items: stretch;\n    flex-wrap: wrap;\n}\n.row-element {\n    display: flex;\n    justify-content: space-around;\n}\n.kanji-box {\n    border: solid black;\n    border-radius: 11%;\n    padding: min(1.5vw, 2.5vh);\n    font-size: min(6vw, 12vh);\n}\n.no-answer {\n    border: solid #0000007f;\n    background-color: white;\n    color: #0000007f;\n}\n.right-answer {\n    border: solid greenyellow;\n    background-color: white;\n    color: greenyellow;\n}\n.wrong-answer {\n    border: solid tomato;\n    background-color: white;\n    color: tomato;\n}\n.skip-button {\n    border: 0;\n    background-color: #0000007f;\n}\n@media (orientation: landscape) {\n    .question-answer {\n        flex-direction: column;\n        padding: 10vh 2vw 10vh 2vw;\n        height: 60vh;\n        width: 88vw;\n    }\n    .skip-button {\n        height: 80vh;\n        width: 8vw;\n    }\n}\n@media (orientation: portrait) {\n    .cmain {\n        flex-direction: column;\n    }\n    .question-answer {\n        flex-direction: row-reverse;\n        padding: 3.8vh 25vw 3.8vh 25vw;\n        height: 66vh;\n        width: 50vw;\n    }\n    .row-element {\n        flex-direction: column;\n    }\n    .skip-button {\n        height: 6.4vh;\n        width: 100vw;\n    }\n}", "",{"version":3,"sources":["webpack://./src/style.css"],"names":[],"mappings":"AAAA;IACI,SAAS;AACb;AACA;IACI,aAAa;IACb,uBAAuB;IACvB,YAAY;IACZ,uBAAuB;IACvB,mBAAmB;IACnB,cAAc;AAClB;AACA;IACI,YAAY;IACZ,gBAAgB;IAChB,mBAAmB;AACvB;AACA;IACI,WAAW;AACf;AACA;IACI,SAAS;AACb;AACA;IACI,YAAY;AAChB;AACA;IACI,aAAa;IACb,6BAA6B;IAC7B,mBAAmB;AACvB;AACA;IACI,aAAa;IACb,8BAA8B;IAC9B,oBAAoB;IACpB,eAAe;AACnB;AACA;IACI,aAAa;IACb,6BAA6B;AACjC;AACA;IACI,mBAAmB;IACnB,kBAAkB;IAClB,0BAA0B;IAC1B,yBAAyB;AAC7B;AACA;IACI,uBAAuB;IACvB,uBAAuB;IACvB,gBAAgB;AACpB;AACA;IACI,yBAAyB;IACzB,uBAAuB;IACvB,kBAAkB;AACtB;AACA;IACI,oBAAoB;IACpB,uBAAuB;IACvB,aAAa;AACjB;AACA;IACI,SAAS;IACT,2BAA2B;AAC/B;AACA;IACI;QACI,sBAAsB;QACtB,0BAA0B;QAC1B,YAAY;QACZ,WAAW;IACf;IACA;QACI,YAAY;QACZ,UAAU;IACd;AACJ;AACA;IACI;QACI,sBAAsB;IAC1B;IACA;QACI,2BAA2B;QAC3B,8BAA8B;QAC9B,YAAY;QACZ,WAAW;IACf;IACA;QACI,sBAAsB;IAC1B;IACA;QACI,aAAa;QACb,YAAY;IAChB;AACJ","sourcesContent":["body {\n    margin: 0;\n}\n.cheader, .cfooter {\n    display: flex;\n    background-color: black;\n    color: white;\n    justify-content: center;\n    align-items: center;\n    font-size: 3vh;\n}\n.cheader {\n    height: 15vh;\n    text-indent: 3vw;\n    letter-spacing: 3vw;\n}\n.cfooter {\n    height: 5vh;\n}\n.cheader > *, .cfooter > * {\n    margin: 0;\n}\n.cfooter a {\n    color: white;\n}\n.cmain {\n    display: flex;\n    justify-content: space-around;\n    align-items: center;\n}\n.question-answer {\n    display: flex;\n    justify-content: space-between;\n    align-items: stretch;\n    flex-wrap: wrap;\n}\n.row-element {\n    display: flex;\n    justify-content: space-around;\n}\n.kanji-box {\n    border: solid black;\n    border-radius: 11%;\n    padding: min(1.5vw, 2.5vh);\n    font-size: min(6vw, 12vh);\n}\n.no-answer {\n    border: solid #0000007f;\n    background-color: white;\n    color: #0000007f;\n}\n.right-answer {\n    border: solid greenyellow;\n    background-color: white;\n    color: greenyellow;\n}\n.wrong-answer {\n    border: solid tomato;\n    background-color: white;\n    color: tomato;\n}\n.skip-button {\n    border: 0;\n    background-color: #0000007f;\n}\n@media (orientation: landscape) {\n    .question-answer {\n        flex-direction: column;\n        padding: 10vh 2vw 10vh 2vw;\n        height: 60vh;\n        width: 88vw;\n    }\n    .skip-button {\n        height: 80vh;\n        width: 8vw;\n    }\n}\n@media (orientation: portrait) {\n    .cmain {\n        flex-direction: column;\n    }\n    .question-answer {\n        flex-direction: row-reverse;\n        padding: 3.8vh 25vw 3.8vh 25vw;\n        height: 66vh;\n        width: 50vw;\n    }\n    .row-element {\n        flex-direction: column;\n    }\n    .skip-button {\n        height: 6.4vh;\n        width: 100vw;\n    }\n}"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.id, "body {\n    margin: 0;\n}\n.cheader, .cfooter {\n    display: flex;\n    background-color: black;\n    color: white;\n    justify-content: center;\n    align-items: center;\n    font-size: 3vh;\n}\n.cheader {\n    height: 15vh;\n    text-indent: 3vw;\n    letter-spacing: 3vw;\n}\n.cfooter {\n    height: 5vh;\n}\n.cheader > *, .cfooter > * {\n    margin: 0;\n}\n.cfooter a {\n    color: white;\n}\n.cmain {\n    position: relative;\n    background-color: white;\n    display: flex;\n    justify-content: space-around;\n    align-items: center;\n}\n.dimmed * {\n    background-color: lightgray;\n}\n.message-container {\n    position: absolute;\n    background: none;\n    display: flex;\n}\n.message {\n    border: solid black thin;\n    padding: min(6vh, 3vw) max(6vh, 3vw);\n    background-color: white;\n    overflow-y: scroll;\n}\n.message * {\n    background-color: white;\n}\n.button-container {\n    display: flex;\n    max-height: -moz-fit-content;\n    max-height: fit-content;\n    max-width: -moz-fit-content;\n    max-width: fit-content;\n    writing-mode: vertical-rl;\n}\n.x-button {\n    border: none;\n    padding: 0.5em; \n    background-color: black;\n    color: white;\n}\n.question-answer {\n    display: flex;\n    justify-content: space-between;\n    align-items: stretch;\n    flex-wrap: wrap;\n}\n.row-element {\n    display: flex;\n    justify-content: space-around;\n}\n.kanji-box {\n    border: solid black;\n    border-radius: 11%;\n    padding: min(1.5vw, 2.5vh);\n    font-size: min(6vw, 12vh);\n}\n.no-answer {\n    border: solid #0000007f;\n    color: #0000007f;\n}\n.right-answer {\n    border: solid greenyellow;\n    color: greenyellow;\n}\n.wrong-answer {\n    border: solid tomato;\n    color: tomato;\n}\n.skip-button {\n    border: 0;\n    background-color: #0000007f;\n}\n@media (orientation: landscape) {\n    .message {\n        height: 50vh;\n        width: 40vw;\n    }\n    .question-answer {\n        flex-direction: column;\n        padding: 10vh 2vw 10vh 2vw;\n        height: 60vh;\n        width: 88vw;\n    }\n    .skip-button {\n        height: 80vh;\n        width: 8vw;\n    }\n}\n@media (orientation: portrait) {\n    .cmain {\n        flex-direction: column;\n    }\n    .message {\n        height: 40vh;\n        width: 50vw;\n    }\n    .question-answer {\n        flex-direction: row-reverse;\n        padding: 3.8vh 25vw 3.8vh 25vw;\n        height: 66vh;\n        width: 50vw;\n    }\n    .row-element {\n        flex-direction: column;\n    }\n    .skip-button {\n        height: 6.4vh;\n        width: 100vw;\n    }\n}", "",{"version":3,"sources":["webpack://./src/style.css"],"names":[],"mappings":"AAAA;IACI,SAAS;AACb;AACA;IACI,aAAa;IACb,uBAAuB;IACvB,YAAY;IACZ,uBAAuB;IACvB,mBAAmB;IACnB,cAAc;AAClB;AACA;IACI,YAAY;IACZ,gBAAgB;IAChB,mBAAmB;AACvB;AACA;IACI,WAAW;AACf;AACA;IACI,SAAS;AACb;AACA;IACI,YAAY;AAChB;AACA;IACI,kBAAkB;IAClB,uBAAuB;IACvB,aAAa;IACb,6BAA6B;IAC7B,mBAAmB;AACvB;AACA;IACI,2BAA2B;AAC/B;AACA;IACI,kBAAkB;IAClB,gBAAgB;IAChB,aAAa;AACjB;AACA;IACI,wBAAwB;IACxB,oCAAoC;IACpC,uBAAuB;IACvB,kBAAkB;AACtB;AACA;IACI,uBAAuB;AAC3B;AACA;IACI,aAAa;IACb,4BAAuB;IAAvB,uBAAuB;IACvB,2BAAsB;IAAtB,sBAAsB;IACtB,yBAAyB;AAC7B;AACA;IACI,YAAY;IACZ,cAAc;IACd,uBAAuB;IACvB,YAAY;AAChB;AACA;IACI,aAAa;IACb,8BAA8B;IAC9B,oBAAoB;IACpB,eAAe;AACnB;AACA;IACI,aAAa;IACb,6BAA6B;AACjC;AACA;IACI,mBAAmB;IACnB,kBAAkB;IAClB,0BAA0B;IAC1B,yBAAyB;AAC7B;AACA;IACI,uBAAuB;IACvB,gBAAgB;AACpB;AACA;IACI,yBAAyB;IACzB,kBAAkB;AACtB;AACA;IACI,oBAAoB;IACpB,aAAa;AACjB;AACA;IACI,SAAS;IACT,2BAA2B;AAC/B;AACA;IACI;QACI,YAAY;QACZ,WAAW;IACf;IACA;QACI,sBAAsB;QACtB,0BAA0B;QAC1B,YAAY;QACZ,WAAW;IACf;IACA;QACI,YAAY;QACZ,UAAU;IACd;AACJ;AACA;IACI;QACI,sBAAsB;IAC1B;IACA;QACI,YAAY;QACZ,WAAW;IACf;IACA;QACI,2BAA2B;QAC3B,8BAA8B;QAC9B,YAAY;QACZ,WAAW;IACf;IACA;QACI,sBAAsB;IAC1B;IACA;QACI,aAAa;QACb,YAAY;IAChB;AACJ","sourcesContent":["body {\n    margin: 0;\n}\n.cheader, .cfooter {\n    display: flex;\n    background-color: black;\n    color: white;\n    justify-content: center;\n    align-items: center;\n    font-size: 3vh;\n}\n.cheader {\n    height: 15vh;\n    text-indent: 3vw;\n    letter-spacing: 3vw;\n}\n.cfooter {\n    height: 5vh;\n}\n.cheader > *, .cfooter > * {\n    margin: 0;\n}\n.cfooter a {\n    color: white;\n}\n.cmain {\n    position: relative;\n    background-color: white;\n    display: flex;\n    justify-content: space-around;\n    align-items: center;\n}\n.dimmed * {\n    background-color: lightgray;\n}\n.message-container {\n    position: absolute;\n    background: none;\n    display: flex;\n}\n.message {\n    border: solid black thin;\n    padding: min(6vh, 3vw) max(6vh, 3vw);\n    background-color: white;\n    overflow-y: scroll;\n}\n.message * {\n    background-color: white;\n}\n.button-container {\n    display: flex;\n    max-height: fit-content;\n    max-width: fit-content;\n    writing-mode: vertical-rl;\n}\n.x-button {\n    border: none;\n    padding: 0.5em; \n    background-color: black;\n    color: white;\n}\n.question-answer {\n    display: flex;\n    justify-content: space-between;\n    align-items: stretch;\n    flex-wrap: wrap;\n}\n.row-element {\n    display: flex;\n    justify-content: space-around;\n}\n.kanji-box {\n    border: solid black;\n    border-radius: 11%;\n    padding: min(1.5vw, 2.5vh);\n    font-size: min(6vw, 12vh);\n}\n.no-answer {\n    border: solid #0000007f;\n    color: #0000007f;\n}\n.right-answer {\n    border: solid greenyellow;\n    color: greenyellow;\n}\n.wrong-answer {\n    border: solid tomato;\n    color: tomato;\n}\n.skip-button {\n    border: 0;\n    background-color: #0000007f;\n}\n@media (orientation: landscape) {\n    .message {\n        height: 50vh;\n        width: 40vw;\n    }\n    .question-answer {\n        flex-direction: column;\n        padding: 10vh 2vw 10vh 2vw;\n        height: 60vh;\n        width: 88vw;\n    }\n    .skip-button {\n        height: 80vh;\n        width: 8vw;\n    }\n}\n@media (orientation: portrait) {\n    .cmain {\n        flex-direction: column;\n    }\n    .message {\n        height: 40vh;\n        width: 50vw;\n    }\n    .question-answer {\n        flex-direction: row-reverse;\n        padding: 3.8vh 25vw 3.8vh 25vw;\n        height: 66vh;\n        width: 50vw;\n    }\n    .row-element {\n        flex-direction: column;\n    }\n    .skip-button {\n        height: 6.4vh;\n        width: 100vw;\n    }\n}"],"sourceRoot":""}]);
 // Exports
 ___CSS_LOADER_EXPORT___.locals = {};
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
@@ -40993,7 +41119,7 @@ module.exports = JSON.parse('["阿呆陀羅","阿諛追従","愛国主義","悪�
 /******/ 	
 /******/ 	/* webpack/runtime/getFullHash */
 /******/ 	(() => {
-/******/ 		__webpack_require__.h = () => ("8259bd4f50c2e489803c")
+/******/ 		__webpack_require__.h = () => ("5a59ec88c42b7b07c6a3")
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/global */
